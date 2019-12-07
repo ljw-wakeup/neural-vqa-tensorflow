@@ -36,7 +36,7 @@ def main():
 	tf.import_graph_def(graph_def, input_map={ "images": images })
 
 	graph = tf.get_default_graph()
-
+        
 	for opn in graph.get_operations():
 		print "Name", opn.name, opn.values()
 
