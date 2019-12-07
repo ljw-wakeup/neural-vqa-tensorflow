@@ -20,7 +20,7 @@ def main():
                        help='Data directory')
 	parser.add_argument('--batch_size', type=int, default=10,
                        help='Batch Size')
-	
+	#data_loader.prepare_training_data()
 
 
 	args = parser.parse_args()
@@ -40,7 +40,7 @@ def main():
 	for opn in graph.get_operations():
 		print "Name", opn.name, opn.values()
 
-	all_data = data_loader.load_questions_answers(args)
+	all_data = data_loader.prepare_training_data()
 	if args.split == "train":
 		qa_data = all_data['training']
 	else:

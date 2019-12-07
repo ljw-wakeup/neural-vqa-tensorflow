@@ -24,7 +24,7 @@ def main():
                        help='Batch Size')
 	parser.add_argument('--learning_rate', type=float, default=0.001,
                        help='Batch Size')
-	parser.add_argument('--epochs', type=int, default=200,
+	parser.add_argument('--epochs', type=int, default=10,
                        help='Expochs')
 	parser.add_argument('--debug', type=bool, default=False,
                        help='Debug')
@@ -94,8 +94,8 @@ def main():
 				print "Accuracy", accuracy
 				print "---------------"
 			else:
-				print "Loss", loss_value, batch_no, i
-				print "Training Accuracy", accuracy
+# 				print "Loss", loss_value, batch_no, i
+# 				print "Training Accuracy", accuracy
 			
 		save_path = saver.save(sess, "Data/Models/model{}.ckpt".format(i))
 

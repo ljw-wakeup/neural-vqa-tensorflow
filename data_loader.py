@@ -16,11 +16,11 @@ def prepare_training_data(version = 2, data_dir = 'Data'):
 		qa_data_file = join(data_dir, 'qa_data_file1.pkl')
 		vocab_file = join(data_dir, 'vocab_file1.pkl')
 	else:
-		t_q_json_file = join(data_dir, 'v2_OpenEnded_mscoco_train2014_questions.json')
-		t_a_json_file = join(data_dir, 'v2_mscoco_train2014_annotations.json')
+		t_q_json_file = join(data_dir, 'OpenEnded_mscoco_train2014_questions.json')
+		t_a_json_file = join(data_dir, 'mscoco_train2014_annotations.json')
 
-		v_q_json_file = join(data_dir, 'v2_OpenEnded_mscoco_val2014_questions.json')
-		v_a_json_file = join(data_dir, 'v2_mscoco_val2014_annotations.json')
+		v_q_json_file = join(data_dir, 'OpenEnded_mscoco_val2014_questions.json')
+		v_a_json_file = join(data_dir, 'mscoco_val2014_annotations.json')
 		qa_data_file = join(data_dir, 'qa_data_file2.pkl')
 		vocab_file = join(data_dir, 'vocab_file2.pkl')
 
@@ -32,9 +32,10 @@ def prepare_training_data(version = 2, data_dir = 'Data'):
 			return data
 
 	print "Loading Training questions"
-	with open(t_q_json_file) as f:
+	with open(t_q_json_file) as f: 
 		t_questions = json.loads(f.read())
-	
+     
+   
 	print "Loading Training anwers"
 	with open(t_a_json_file) as f:
 		t_answers = json.loads(f.read())
